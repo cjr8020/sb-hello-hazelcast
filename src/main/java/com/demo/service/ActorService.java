@@ -4,7 +4,7 @@ import com.demo.domain.Actor;
 
 public interface ActorService {
 
-  Iterable<Actor> listAllActors();
+  Iterable<Actor> readActors();
 
   Actor findById(Integer id);
 

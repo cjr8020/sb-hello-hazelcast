@@ -34,17 +34,26 @@ public class SpringbootHelloWorldController {
       logger.info("processing 'listActors' request");
     }
 
-    try {
-      stopWatch.start();
-      listOfActors = actorService.listAllActors();
-    } catch (Throwable throwable) {
-      logger.error("Encountered unexpected exception", throwable.getMessage());
-    } finally {
-      stopWatch.stop();
-      if (logger.isInfoEnabled()) {
-        logger.info("'listActors` completed in {}ms", stopWatch.getTotalTimeMillis());
-      }
+//    try {
+//      stopWatch.start();
+//      listOfActors = actorService.readActors();
+//    } catch (Throwable throwable) {
+//      logger.error("Encountered unexpected exception", throwable.getMessage());
+//    } finally {
+//      stopWatch.stop();
+//      if (logger.isInfoEnabled()) {
+//        logger.info("'listActors` completed in {}ms", stopWatch.getTotalTimeMillis());
+//      }
+//    }
+
+    stopWatch.start();
+    listOfActors = actorService.readActors();
+
+    stopWatch.stop();
+    if (logger.isInfoEnabled()) {
+      logger.info("'listActors` completed in {}ms", stopWatch.getTotalTimeMillis());
     }
+
 
     return listOfActors;
   }
