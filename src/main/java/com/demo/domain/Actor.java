@@ -1,8 +1,5 @@
 package com.demo.domain;
 
-import com.hazelcast.nio.ObjectDataInput;
-import com.hazelcast.nio.ObjectDataOutput;
-import java.io.IOException;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,7 +11,7 @@ import org.springframework.core.style.ToStringCreator;
  */
 @Entity
 @Table(name = "actor")
-public class Actor implements com.hazelcast.nio.serialization.DataSerializable {
+public class Actor {
 
   @Id
   @Column(name = "id")
@@ -59,17 +56,4 @@ public class Actor implements com.hazelcast.nio.serialization.DataSerializable {
               .toString(); 
   }
 
-  @Override
-  public void writeData(ObjectDataOutput out) throws IOException {
-    out.writeInt(id);
-    out.writeUTF(username);
-    out.writeUTF(email);
-  }
-
-  @Override
-  public void readData(ObjectDataInput in) throws IOException {
-    id = in.readInt();
-    username = in.readUTF();
-    email = in.readUTF();
-  }
 }
