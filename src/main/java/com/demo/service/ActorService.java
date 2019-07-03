@@ -8,6 +8,6 @@ public interface ActorService {
 
   Actor findById(Integer id);
 
-  Actor saveActor(Actor actor);
+  void saveActor(Actor actor);
 
 }

@@ -1,10 +1,8 @@
 DROP TABLE actor IF EXISTS;
 
---CREATE schema testdb;
-
 CREATE TABLE actor
 (
-	id        INTEGER PRIMARY KEY,
+	id        INTEGER PRIMARY KEY AUTO_INCREMENT,
 	username  VARCHAR2(50),
 	email     VARCHAR2(50)
 

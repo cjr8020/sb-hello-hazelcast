@@ -8,13 +8,13 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
 @EnableCaching
-public class SpringbootHelloWorldApplication {
+public class DemoApplication {
 
-  private static final Logger log = LoggerFactory.getLogger(SpringbootHelloWorldApplication.class);
+  private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
   public static void main(String[] args) {
-    log.info("SpringbootHelloWorldApplication::::Started Application");
-    SpringApplication.run(SpringbootHelloWorldApplication.class, args);
+    log.info("DemoApplication::::Started Application");
+    SpringApplication.run(DemoApplication.class, args);
   }
  
 }

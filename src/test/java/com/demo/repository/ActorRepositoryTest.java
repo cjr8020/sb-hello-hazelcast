@@ -35,7 +35,6 @@ public class ActorRepositoryTest {
     
     // Save actor, verify has id value after save
     assertNull(actor.getId());    //null before save (not found)
-    actor.setId(3);
     actorRepository.save(actor);
     assertNotNull(actor.getId()); //not null after save
     
