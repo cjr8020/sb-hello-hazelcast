@@ -1,5 +1,10 @@
 # sb-hello-hazelcast
 
+## Hazelcast debug and diagnostics
+
+To enable add `-Dhazelcast.diagnostics.enabled=true` to the JVM arguments.
+
+
 ## Serialization options
 
 * DataSerializable
