@@ -1,0 +1,58 @@
+server:
+  port: 8080
+
+# --------------------------
+# Application Configuration
+# --------------------------
+spring:
+  datasource:
+  # note: `spring.datasource.*` properties are completely IGNORED by the `EmbeddedDatabaseBuilder`.
+  # see DatasourceConfiguration..
+  #     url: "jdbc:h2:mem:testdb;MODE=Oracle;MV_STORE=FALSE;MVCC=FALSE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
+  #     username: sa
+  #     password:
+  #     driverClassName: org.h2.Driver
+  #     platform: h2
+  #     initialize: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
+
+
+# ---------------------
+# Jackson configuration
+# ---------------------
+spring.jackson.serialization.indent_output: true
+spring.jackson.serialization.write_dates_as_timestamps: false
+
+# ---------------------------------------------
+# management endpoint configuration
+# ---------------------------------------------
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info
+    jmx:
+      exposure:
+        exclude: "*"
+
+
+#
+## logging configuration
+#
+logging:
+  file: logs/app.log
+  pattern:
+    console: "[%d] [%-5level] [%thread] [%logger] - [%msg]%n"
+    file: "[%d] [%-5level] [%thread] [%logger] - [%msg]%n"
+  level:
+    org.springframework.web: WARN
+    org.springframework.security: WARN
+    com.hazelcast: INFO
+    com.demo: INFO

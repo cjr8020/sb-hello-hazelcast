@@ -1,6 +1,5 @@
 ### application
 logs/
-config/application.yml
 *.h2.db
 *.lock.db
 test-*.jks
